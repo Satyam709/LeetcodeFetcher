@@ -13,7 +13,11 @@
 import getDailyProblem from "./GetProblem";
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		const res = await getDailyProblem()
-		return new Response(res);
+		const res = await getDailyProblem();
+		// Assuming 'res' contains the URL as a string
+		const url = res; // Make sure this is a valid URL string
+
+		// Return a redirect response
+		return Response.redirect(url, 302);
 	},
 } satisfies ExportedHandler<Env>;

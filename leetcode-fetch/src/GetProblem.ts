@@ -22,12 +22,12 @@ export default async function getDailyProblem() {
 		};
 	}
 
-  console.log(res);
+  // console.log(res);
 
     const body : body = await res.json();
 
-    let baseUrl = "https://leetcode.com/";
-    console.log(body.data?.activeDailyCodingChallengeQuestion?.link);
+    let baseUrl = "https://leetcode.com";
+    //console.log(body.data?.activeDailyCodingChallengeQuestion?.link);
     const pblm_link = body.data?.activeDailyCodingChallengeQuestion?.link;
   return baseUrl + pblm_link;
 }
